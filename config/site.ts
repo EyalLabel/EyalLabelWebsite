@@ -8,10 +8,7 @@ export const siteConfig = {
   name: "Eyal Label",
   description: "Software Engineer, Game Developer, and Web Developer",
   navItems: [
-    {
-      label: "Home",
-      href: "/",
-    },
+
     {
       label: "Games",
       href: "/Games",

@@ -4,6 +4,7 @@ import { SkullIcon } from './icons';
   // Depending on the size of the application, this would be stored in a database.
   const links = [
     { name: 'Undead Unrest', href: '/Games/UndeadUnrest', icon: SkullIcon },
+    { name: 'Bubble Brawl', href: '/Games/BubbleBrawl', icon: SkullIcon },
     /*
     {
       name: 'Invoices',
