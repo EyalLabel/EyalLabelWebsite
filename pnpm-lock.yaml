@@ -61,6 +61,9 @@ importers:
       git:
         specifier: ^0.1.5
         version: 0.1.5
+      image:
+        specifier: link:@heroui\image
+        version: link:@heroui/image
       intl-messageformat:
         specifier: ^10.5.0
         version: 10.7.14
