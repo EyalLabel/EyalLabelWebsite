@@ -3,7 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
         output:"export",
     images: { unoptimized: true },
-    //basePath:"/"
+    basePath:"/EyalLabelWebsite",
 };
 
 module.exports = nextConfig;
