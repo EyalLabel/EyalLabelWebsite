@@ -40,7 +40,7 @@ runs:
     - name: Build with Next.js
       run: pnpm next build
     - name: Static HTML export with Next.js
-      run: pnpm next export
+      run: pnpm next build
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
