@@ -8,7 +8,7 @@ export default function SideNav() {
     <div className="flex h-full flex-col px-3 py-4 md:px-2">
     <Link href="/Games">
         <NextImage
-            src="/LabelUpLogo.png"
+            src="./LabelUpLogo.png"
             alt="Home"
             width={200}
             height={200}
