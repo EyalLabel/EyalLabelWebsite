@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import NavLinks from './gamenavlinks';
-import Image from "@heroui/image";
+
 import NextImage from "next/image";
 
 export default function SideNav() {
