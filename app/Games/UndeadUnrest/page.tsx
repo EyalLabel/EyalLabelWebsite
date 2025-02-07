@@ -6,10 +6,10 @@ import React, { useState, useEffect } from "react";
 
 export default function UndeadUnrestPage() {
   const { unityProvider , loadingProgression, isLoaded,requestFullscreen } = useUnityContext({
-    loaderUrl: "/UUWeb/Build/UUWeb.loader.js",
-    dataUrl: "/UUWeb/Build/UUWeb.data",
-    frameworkUrl: "/UUWeb/Build/UUWeb.framework.js",
-    codeUrl: "/UUWeb/Build/UUWeb.wasm",
+    loaderUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.loader.js",
+    dataUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.data",
+    frameworkUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.framework.js",
+    codeUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.wasm",
   });
   const [devicePixelRatio, setDevicePixelRatio] = useState(
     typeof window !== "undefined" ? window.devicePixelRatio : 1
