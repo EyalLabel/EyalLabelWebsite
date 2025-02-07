@@ -4,7 +4,7 @@ import { Unity,useUnityContext } from "react-unity-webgl";
 import {Button} from "@heroui/button";
 import React, { useState, useEffect } from "react";
 
-export default function GamePage() {
+export default function UndeadUnrestPage() {
   const { unityProvider , loadingProgression, isLoaded,requestFullscreen } = useUnityContext({
     loaderUrl: "/UUWeb/Build/UUWeb.loader.js",
     dataUrl: "/UUWeb/Build/UUWeb.data",
@@ -12,11 +12,11 @@ export default function GamePage() {
     codeUrl: "/UUWeb/Build/UUWeb.wasm",
   });
   const [devicePixelRatio, setDevicePixelRatio] = useState(
-    window.devicePixelRatio
+    typeof window !== "undefined" ? window.devicePixelRatio : 1
   );
   useEffect(
     function () {
-      // A function which will update the device pixel ratio of the Unity
+      if (typeof window === "undefined") return undefined;
       // Application to match the device pixel ratio of the browser.
       const updateDevicePixelRatio = function () {
         setDevicePixelRatio(window.devicePixelRatio);
