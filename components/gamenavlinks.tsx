@@ -24,7 +24,7 @@ import { SkullIcon ,BubbleIcon} from './icons';
             <Link
               key={link.name}
               href={link.href}
-              className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-primary-50 p-3 text-sm font-medium hover:bg-primary-100 hover:text-secondary-600 md:flex-none md:justify-start md:p-2 md:px-3"
+              className="flex h-[48px] items-center justify-center gap-2 rounded-md bg-primary-50 p-3 text-sm font-medium hover:bg-primary-100 hover:text-secondary-600 md:flex-none md:justify-start md:p-2 md:px-3"
             >
               <LinkIcon className="w-6 text-primary-600" />
               <p className="hidden md:block text-secondary-600">{link.name}</p>
