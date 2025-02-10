@@ -1,10 +1,10 @@
-import { SkullIcon } from './icons';
+import { SkullIcon ,BubbleIcon} from './icons';
   import Link from 'next/link';
   // Map of links to display in the side navigation.
   // Depending on the size of the application, this would be stored in a database.
   const links = [
     { name: 'Undead Unrest', href: '/Games/UndeadUnrest', icon: SkullIcon },
-    { name: 'Bubble Brawl', href: '/Games/BubbleBrawl', icon: SkullIcon },
+    { name: 'Bubble Brawl', href: '/Games/BubbleBrawl', icon: BubbleIcon },
     /*
     {
       name: 'Invoices',

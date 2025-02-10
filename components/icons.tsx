@@ -155,6 +155,29 @@ export const SkullIcon: React.FC<IconSvgProps> = ({
     </svg>
   );
 };
+
+export const BubbleIcon: React.FC<IconSvgProps> = ({
+  size = 24,
+  width,
+  height,
+  ...props
+}) => {
+  return (
+    <svg
+      height={size || height}
+      viewBox="0 0 512 512"
+      width={size || width}
+      {...props}
+    >
+      <path
+        clipRule="evenodd"
+        d="M12 8.5C12 10.9853 9.98528 13 7.5 13C5.01472 13 3 10.9853 3 8.5C3 6.01472 5.01472 4 7.5 4C9.98528 4 12 6.01472 12 8.5Z"
+        fill="#0a66c2"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+};
 export const MoonFilledIcon = ({
   size = 24,
   width,
