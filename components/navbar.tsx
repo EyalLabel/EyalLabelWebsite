@@ -81,44 +81,8 @@ export const Navbar = () => {
             
           ))}
         </ul>
-
-        <Dropdown>
-            <NavbarItem>
-            <DropdownTrigger>
-                <Button
-                disableRipple
-                className="p-0 bg-transparent -[hover=true]:bg-transparent text-md font-medium text-foreground data-[active=true]:text-primary "
-                endContent={<ChevronDown />}
-                radius="sm"
-                variant="light"
-                size="lg"
-                >
-                Resume Pages
-                </Button>
-            </DropdownTrigger>
-            </NavbarItem>
-          <DropdownMenu
-            aria-label="CV Pages"
-            className="w-[340px]"
-            itemClasses={{
-              base: "gap-4",
-            }}
-          >
-            <DropdownItem
-              key="Software Development CV" 
-              href="/SoftwareDevCV"
-              
-            >
-              Software Development CV
-            </DropdownItem>
-            <DropdownItem
-              key="GameDev"
-              href="/GameDevCV"
-            >Game Development CV
-            </DropdownItem>
-            
-          </DropdownMenu>
-        </Dropdown>
+          
+        
       </NavbarContent>
      
       <NavbarContent

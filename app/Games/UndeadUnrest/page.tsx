@@ -5,6 +5,8 @@ import {Button} from "@heroui/button";
 import React, { useState, useEffect } from "react";
 
 export default function UndeadUnrestPage() {
+
+  
   const { unityProvider , loadingProgression, isLoaded,requestFullscreen } = useUnityContext({
     loaderUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.loader.js",
     dataUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.data",
@@ -40,7 +42,11 @@ export default function UndeadUnrestPage() {
     requestFullscreen(true);
   }
   return (
+    
     <div className="flex flex-col items-center w-full h-full">
+    <h1 className="text-4xl font-bold text-Primary mb-2">UNDEAD UNREST</h1>
+
+    <br />
     {!isLoaded && (
       <p>Loading Application... {Math.round(loadingProgression * 100)}%</p>
     )}

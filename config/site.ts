@@ -17,7 +17,11 @@ export const siteConfig = {
       label: "About",
       href: "/about",
     },
-    
+
+    {
+      label: "Proffesional Experience",
+      href: "/Experience",
+    },
   ],
   navMenuItems: [
     {

@@ -61,7 +61,7 @@ export default function SoftwareDevCVPage() {
             <span className="text-sm">2022-11 - Present</span>
           </div>
           <ul className="list-disc pl-5">
-            <li>Developed and maintained enterprise-level ERP solutions using InterSystems IRIS</li>
+            <li>Developed and maintained enterprise-level ERP solutions</li>
             <li>Designed and implemented responsive user interfaces for complex business applications</li>
             <li>Collaborated with stakeholders to gather requirements and deliver optimal solutions</li>
             <li>Participated in code reviews and implemented best practices for software development</li>
