@@ -154,7 +154,7 @@ export default function GameDevCVPage() {
         <h2 className="text-xl font-bold text-gray-800 border-b border-gray-300 pb-1 mb-3">Languages</h2>
         <ul className="list-disc pl-5 space-y-1">
           <li>Hebrew: Native</li>
-          <li>English: Proficient (C2)</li>
+          <li>English: Fluent</li>
         </ul>
       </section>
 
