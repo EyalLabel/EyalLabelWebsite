@@ -13,10 +13,7 @@ export const siteConfig = {
       label: "Games",
       href: "/Games",
     },
-    {
-      label: "About",
-      href: "/about",
-    },
+    
 
     {
       label: "Proffesional Experience",
@@ -27,10 +24,6 @@ export const siteConfig = {
     {
       label: "Games",
       href: "/Games",
-    },
-    {
-      label: "About",
-      href: "/about",
     },
 
     {
