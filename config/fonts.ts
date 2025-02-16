@@ -1,4 +1,4 @@
-import { Fira_Code as FontMono, Inter as FontSans } from "next/font/google";
+import { Fira_Code as FontMono, Inter as FontSans ,Instrument_Sans as InSans} from "next/font/google";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -10,3 +10,8 @@ export const fontMono = FontMono({
   variable: "--font-mono",
 });
 
+export const fontInSans = InSans({
+  weight: ["400" ,"700"],
+  subsets: ["latin"],
+  variable: "--font-insans",
+});
