@@ -2,7 +2,22 @@ import { link } from "fs";
 import { title } from "process";
 
 export type SiteConfig = typeof siteConfig;
+export type ProjectPreviewProps=  {index:number, title: string, description: string, image: string, href: string};
+export type ProjectPreviewList = typeof ProjectPreviewList;
 
+export const ProjectPreviewList = {
+  previews:[
+
+    {
+      index:1,
+      title: "UNDEAD UNREST",
+      description: "A 2D Rogue-Lite Game, Made in Unity",
+      image: "/LabelUpLogo.png",
+      href: "/Games/UndeadUnrest",
+    }
+  ]
+  
+};
 export const siteConfig = {
   title: "Eyal Label's Personal Website",
   name: "Eyal Label",
