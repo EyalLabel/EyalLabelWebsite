@@ -20,7 +20,7 @@ export const ProjectPreviewList = {
       index:2,
       title: "BUBBLE BRAWL",
       description: "An Arena combat game made in Unity for the 2025 Global Game Jam",
-      image: "./UUscreenShot.png",
+      image: "./BBrawlThumbnail.png",
       href: "/Games/BubbleBrawl",
     }
   ]
