@@ -55,7 +55,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="flex flex-col gap-8 py-8 md:py-12 max-w-6xl mx-auto">
+    <div className="flex flex-col gap-8 py-8 md:py-12 max-w-4xl mx-auto">
       {/* Header Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
@@ -72,74 +72,77 @@ export default function AboutPage() {
       {/* Profile Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full overflow-x-hidden"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         {/* Profile Image & Quick Info */}
-        <MotionCard className="col-span-1 h-fit">
-          <CardBody className="text-center space-y-4 p-6">
-            <div className="relative w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold">
-              EL
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold">Eyal Label</h2>
-              <p className="text-default-600">
-                Software Engineer & Game Developer
-              </p>
-            </div>
-            <div className="flex gap-2 justify-center">
-              <Button
-                isExternal
-                as={Link}
-                href={siteConfig.links.github}
-                size="sm"
-                startContent={<GithubIcon size={16} />}
-                variant="flat"
-              >
-                GitHub
-              </Button>
-              <Button
-                isExternal
-                as={Link}
-                href={siteConfig.links.linkedin}
-                size="sm"
-                startContent={<LinkedInIcon size={16} />}
-                variant="flat"
-              >
-                LinkedIn
-              </Button>
-            </div>
-          </CardBody>
-        </MotionCard>
+        <motion.div
+          className="w-full max-w-sm mx-auto bg-content1 rounded-2xl p-6 shadow-sm flex flex-col items-center gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold overflow-hidden">
+            EL
+          </div>
+          <div className="text-center">
+            <h2 className="text-2xl font-bold">Eyal Label</h2>
+            <p className="text-default-600">
+              Software Engineer & Game Developer
+            </p>
+          </div>
+          <div className="flex gap-2 justify-center flex-wrap">
+            <Button
+              isExternal
+              as={Link}
+              href={siteConfig.links.github}
+              size="sm"
+              startContent={<GithubIcon size={16} />}
+              variant="flat"
+            >
+              GitHub
+            </Button>
+            <Button
+              isExternal
+              as={Link}
+              href={siteConfig.links.linkedin}
+              size="sm"
+              startContent={<LinkedInIcon size={16} />}
+              variant="flat"
+            >
+              LinkedIn
+            </Button>
+          </div>
+        </motion.div>
 
         {/* About Description */}
-        <MotionCard className="col-span-1 lg:col-span-2 h-fit">
-          <CardHeader>
-            <h3 className="text-xl font-bold">Who I Am</h3>
-          </CardHeader>
-          <CardBody className="space-y-4">
-            <p className="text-default-700 leading-relaxed">
-              I&apos;m a passionate software engineer and game developer with a
-              love for creating engaging digital experiences. My journey began
-              with curiosity about how games work, which led me to explore
-              programming and eventually expand into full-stack web development.
-            </p>
-            <p className="text-default-700 leading-relaxed">
-              I specialize in building interactive applications and games that
-              combine technical excellence with creative design. Whether
-              it&apos;s crafting a seamless web experience or designing game
-              mechanics that keep players engaged, I&apos;m always focused on
-              the end-user experience.
-            </p>
-            <p className="text-default-700 leading-relaxed">
-              When I&apos;m not coding, you can find me exploring new
-              technologies, playing games for inspiration, or working on
-              personal projects that challenge my creativity and technical
-              skills.
-            </p>
-          </CardBody>
-        </MotionCard>
+        <motion.div
+          className="lg:col-span-2 bg-content1 rounded-2xl p-6 shadow-sm space-y-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <h3 className="text-xl font-bold">Who I Am</h3>
+          <p className="text-default-700 leading-relaxed">
+            I&apos;m a passionate software engineer and game developer with a
+            love for creating engaging digital experiences. My journey began
+            with curiosity about how games work, which led me to explore
+            programming and eventually expand into full-stack web development.
+          </p>
+          <p className="text-default-700 leading-relaxed">
+            I specialize in building interactive applications and games that
+            combine technical excellence with creative design. Whether it&apos;s
+            crafting a seamless web experience or designing game mechanics that
+            keep players engaged, I&apos;m always focused on the end-user
+            experience.
+          </p>
+          <p className="text-default-700 leading-relaxed">
+            When I&apos;m not coding, you can find me exploring new
+            technologies, playing games for inspiration, or working on personal
+            projects that challenge my creativity and technical skills.
+          </p>
+        </motion.div>
       </MotionDiv>
 
       <Divider />
