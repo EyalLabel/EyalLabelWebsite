@@ -72,23 +72,23 @@ export default function AboutPage() {
       {/* Profile Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-start w-full"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         {/* Profile Image & Quick Info */}
-        <MotionCard className="col-span-1 h-fit w-full max-w-sm mx-auto lg:mx-0 lg:max-w-none">
-          <CardBody className="text-center space-y-4 p-4 sm:p-6">
-            <div className="relative w-24 h-24 sm:w-32 sm:h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl sm:text-4xl font-bold">
+        <MotionCard className="col-span-1 h-fit">
+          <CardBody className="text-center space-y-4 p-6">
+            <div className="relative w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold">
               EL
             </div>
-            <div className="space-y-2">
-              <h2 className="text-xl sm:text-2xl font-bold">Eyal Label</h2>
-              <p className="text-default-600 text-sm sm:text-base">
+            <div>
+              <h2 className="text-2xl font-bold">Eyal Label</h2>
+              <p className="text-default-600">
                 Software Engineer & Game Developer
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-2 justify-center items-center w-full">
+            <div className="flex gap-2 justify-center">
               <Button
                 isExternal
                 as={Link}
@@ -96,7 +96,6 @@ export default function AboutPage() {
                 size="sm"
                 startContent={<GithubIcon size={16} />}
                 variant="flat"
-                className="w-full sm:w-auto min-w-0"
               >
                 GitHub
               </Button>
@@ -107,7 +106,6 @@ export default function AboutPage() {
                 size="sm"
                 startContent={<LinkedInIcon size={16} />}
                 variant="flat"
-                className="w-full sm:w-auto min-w-0"
               >
                 LinkedIn
               </Button>
@@ -116,7 +114,7 @@ export default function AboutPage() {
         </MotionCard>
 
         {/* About Description */}
-        <MotionCard className="col-span-1 lg:col-span-2 h-fit w-full">
+        <MotionCard className="col-span-1 lg:col-span-2 h-fit">
           <CardHeader>
             <h3 className="text-xl font-bold">Who I Am</h3>
           </CardHeader>
