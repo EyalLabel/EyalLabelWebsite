@@ -17,24 +17,18 @@ const MotionCard = motion(Card);
 
 export default function AboutPage() {
   const skills = {
-    "Programming Languages": [
-      "C#",
-      "TypeScript",
-      "JavaScript",
-      "Python",
-      "C++",
-      "Java",
-    ],
+    "Programming Languages": ["TypeScript", "JavaScript", "Java", "C#"],
     "Web Technologies": [
       "React",
       "Next.js",
       "Node.js",
+      "Express.js",
       "HTML5",
-      "CSS3",
       "Tailwind CSS",
     ],
     "Game Development": [
       "Unity",
+      "Unreal Engine",
       "Game Design",
       "2D/3D Graphics",
       "Physics Systems",
@@ -56,7 +50,7 @@ export default function AboutPage() {
     {
       title: "Full-Stack Development",
       description: "Built multiple web applications with modern tech stack",
-      year: "2023-2024",
+      year: "22-25",
     },
   ];
 
@@ -126,22 +120,23 @@ export default function AboutPage() {
           </CardHeader>
           <CardBody className="space-y-4">
             <p className="text-default-700 leading-relaxed">
-              I&apos;m a passionate software engineer and game developer with a love
-              for creating engaging digital experiences. My journey began with
-              curiosity about how games work, which led me to explore
+              I&apos;m a passionate software engineer and game developer with a
+              love for creating engaging digital experiences. My journey began
+              with curiosity about how games work, which led me to explore
               programming and eventually expand into full-stack web development.
             </p>
             <p className="text-default-700 leading-relaxed">
               I specialize in building interactive applications and games that
-              combine technical excellence with creative design. Whether it&apos;s
-              crafting a seamless web experience or designing game mechanics
-              that keep players engaged, I&apos;m always focused on the end-user
-              experience.
+              combine technical excellence with creative design. Whether
+              it&apos;s crafting a seamless web experience or designing game
+              mechanics that keep players engaged, I&apos;m always focused on
+              the end-user experience.
             </p>
             <p className="text-default-700 leading-relaxed">
-              When I&apos;m not coding, you can find me exploring new technologies,
-              playing games for inspiration, or working on personal projects
-              that challenge my creativity and technical skills.
+              When I&apos;m not coding, you can find me exploring new
+              technologies, playing games for inspiration, or working on
+              personal projects that challenge my creativity and technical
+              skills.
             </p>
           </CardBody>
         </MotionCard>
@@ -204,9 +199,7 @@ export default function AboutPage() {
               <CardBody className="flex flex-row items-center gap-4 p-6">
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
-                    <span className="text-primary font-bold">
-                      {achievement.year}
-                    </span>
+                    <span className="text-primary font-bold"></span>
                   </div>
                 </div>
                 <div className="flex-grow">
@@ -228,8 +221,9 @@ export default function AboutPage() {
       >
         <h2 className="text-2xl font-bold">Let&apos;s Connect</h2>
         <p className="text-default-600 max-w-2xl mx-auto">
-          I&apos;m always interested in discussing new opportunities, collaborating
-          on projects, or just chatting about technology and game development.
+          I&apos;m always interested in discussing new opportunities,
+          collaborating on projects, or just chatting about technology and game
+          development.
         </p>
         <div className="flex gap-4 justify-center">
           <Button
@@ -241,7 +235,12 @@ export default function AboutPage() {
           >
             View My Experience
           </Button>
-                     <Button as={Link} href={getInternalPath("/Games")} size="lg" variant="bordered">
+          <Button
+            as={Link}
+            href={getInternalPath("/Games")}
+            size="lg"
+            variant="bordered"
+          >
             See My Projects
           </Button>
         </div>
