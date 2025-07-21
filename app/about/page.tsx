@@ -55,7 +55,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="flex flex-col gap-8 py-8 md:py-12 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-hidden">
+    <div className="flex flex-col gap-8 py-8 md:py-12 max-w-6xl mx-auto">
       {/* Header Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ export default function AboutPage() {
       {/* Profile Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-8"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
