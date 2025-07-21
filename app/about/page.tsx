@@ -1,9 +1,250 @@
-import { title } from "@/components/primitives";
+"use client";
+
+import { motion } from "framer-motion";
+import { Card, CardBody, CardHeader } from "@heroui/card";
+import { Chip } from "@heroui/chip";
+import { Divider } from "@heroui/divider";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
+
+import { title, subtitle } from "@/components/primitives";
+import { siteConfig } from "@/config/site";
+import { GithubIcon, LinkedInIcon } from "@/components/icons";
+
+const MotionDiv = motion.div;
+const MotionCard = motion(Card);
 
 export default function AboutPage() {
+  const skills = {
+    "Programming Languages": [
+      "C#",
+      "TypeScript",
+      "JavaScript",
+      "Python",
+      "C++",
+      "Java",
+    ],
+    "Web Technologies": [
+      "React",
+      "Next.js",
+      "Node.js",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+    ],
+    "Game Development": [
+      "Unity",
+      "Game Design",
+      "2D/3D Graphics",
+      "Physics Systems",
+    ],
+    "Tools & Platforms": ["Git", "GitHub", "VS Code", "Unity Editor", "Figma"],
+  };
+
+  const achievements = [
+    {
+      title: "Global Game Jam 2025",
+      description: "Developed 'Bubble Brawl' - An arena combat game",
+      year: "2025",
+    },
+    {
+      title: "Indie Game Developer",
+      description: "Created 'Undead Unrest' - A 2D rogue-lite game",
+      year: "2024",
+    },
+    {
+      title: "Full-Stack Development",
+      description: "Built multiple web applications with modern tech stack",
+      year: "2023-2024",
+    },
+  ];
+
   return (
-    <div>
-      <h1 className={title()}>About</h1>
+    <div className="flex flex-col gap-8 py-8 md:py-12 max-w-6xl mx-auto">
+      {/* Header Section */}
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center space-y-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className={title()}>About Me</h1>
+        <p className={subtitle({ class: "mt-4" })}>
+          Get to know more about my journey, skills, and passion
+        </p>
+      </MotionDiv>
+
+      {/* Profile Section */}
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        {/* Profile Image & Quick Info */}
+        <MotionCard className="col-span-1">
+          <CardBody className="text-center space-y-4 p-6">
+            <div className="relative w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold">
+              EL
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold">Eyal Label</h2>
+              <p className="text-default-600">
+                Software Engineer & Game Developer
+              </p>
+            </div>
+            <div className="flex gap-2 justify-center">
+              <Button
+                isExternal
+                as={Link}
+                href={siteConfig.links.github}
+                size="sm"
+                startContent={<GithubIcon size={16} />}
+                variant="flat"
+              >
+                GitHub
+              </Button>
+              <Button
+                isExternal
+                as={Link}
+                href={siteConfig.links.linkedin}
+                size="sm"
+                startContent={<LinkedInIcon size={16} />}
+                variant="flat"
+              >
+                LinkedIn
+              </Button>
+            </div>
+          </CardBody>
+        </MotionCard>
+
+        {/* About Description */}
+        <MotionCard className="col-span-1 lg:col-span-2">
+          <CardHeader>
+            <h3 className="text-xl font-bold">Who I Am</h3>
+          </CardHeader>
+          <CardBody className="space-y-4">
+            <p className="text-default-700 leading-relaxed">
+              I&apos;m a passionate software engineer and game developer with a love
+              for creating engaging digital experiences. My journey began with
+              curiosity about how games work, which led me to explore
+              programming and eventually expand into full-stack web development.
+            </p>
+            <p className="text-default-700 leading-relaxed">
+              I specialize in building interactive applications and games that
+              combine technical excellence with creative design. Whether it&apos;s
+              crafting a seamless web experience or designing game mechanics
+              that keep players engaged, I&apos;m always focused on the end-user
+              experience.
+            </p>
+            <p className="text-default-700 leading-relaxed">
+              When I&apos;m not coding, you can find me exploring new technologies,
+              playing games for inspiration, or working on personal projects
+              that challenge my creativity and technical skills.
+            </p>
+          </CardBody>
+        </MotionCard>
+      </MotionDiv>
+
+      <Divider />
+
+      {/* Skills Section */}
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="space-y-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <h2 className="text-2xl font-bold text-center">Technical Skills</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {Object.entries(skills).map(([category, skillList], index) => (
+            <MotionCard
+              key={category}
+              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+              transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+            >
+              <CardHeader>
+                <h3 className="text-lg font-semibold">{category}</h3>
+              </CardHeader>
+              <CardBody>
+                <div className="flex flex-wrap gap-2">
+                  {skillList.map((skill) => (
+                    <Chip key={skill} color="primary" size="sm" variant="flat">
+                      {skill}
+                    </Chip>
+                  ))}
+                </div>
+              </CardBody>
+            </MotionCard>
+          ))}
+        </div>
+      </MotionDiv>
+
+      <Divider />
+
+      {/* Achievements Section */}
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="space-y-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
+      >
+        <h2 className="text-2xl font-bold text-center">Key Achievements</h2>
+        <div className="space-y-4">
+          {achievements.map((achievement, index) => (
+            <MotionCard
+              key={achievement.title}
+              animate={{ opacity: 1, y: 0 }}
+              className="hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
+            >
+              <CardBody className="flex flex-row items-center gap-4 p-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                    <span className="text-primary font-bold">
+                      {achievement.year}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex-grow">
+                  <h3 className="font-semibold text-lg">{achievement.title}</h3>
+                  <p className="text-default-600">{achievement.description}</p>
+                </div>
+              </CardBody>
+            </MotionCard>
+          ))}
+        </div>
+      </MotionDiv>
+
+      {/* Contact CTA */}
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center space-y-4 py-8"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+      >
+        <h2 className="text-2xl font-bold">Let&apos;s Connect</h2>
+        <p className="text-default-600 max-w-2xl mx-auto">
+          I&apos;m always interested in discussing new opportunities, collaborating
+          on projects, or just chatting about technology and game development.
+        </p>
+        <div className="flex gap-4 justify-center">
+          <Button
+            as={Link}
+            color="primary"
+            href="/Experience"
+            size="lg"
+            variant="shadow"
+          >
+            View My Experience
+          </Button>
+          <Button as={Link} href="/Games" size="lg" variant="bordered">
+            See My Projects
+          </Button>
+        </div>
+      </MotionDiv>
     </div>
   );
 }

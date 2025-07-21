@@ -1,168 +1,463 @@
-import { title } from "@/components/primitives";
+"use client";
 
-export default function GameDevCVPage() {
+import { motion } from "framer-motion";
+import { Card, CardBody, CardHeader } from "@heroui/card";
+import { Chip } from "@heroui/chip";
+import { Divider } from "@heroui/divider";
+import { Button } from "@heroui/button";
+import { Link } from "@heroui/link";
+
+import { title, subtitle } from "@/components/primitives";
+import { siteConfig } from "@/config/site";
+import { GithubIcon, LinkedInIcon } from "@/components/icons";
+
+const MotionDiv = motion.div;
+const MotionCard = motion(Card);
+
+export default function ExperiencePage() {
+  const skills = {
+    "Game Development": [
+      "Unity Engine",
+      "C#",
+      "Unreal Engine",
+      "Game Design",
+      "3D Modeling (Maya)",
+    ],
+    Programming: ["C#", "Java", "JavaScript", "TypeScript", "Python"],
+    Frontend: ["React", "Next.js", "CSS3", "HTML5", "Tailwind CSS"],
+    Backend: ["Spring", ".NET", "Node.js", "RESTful APIs"],
+    Databases: ["MySQL", "MongoDB", "IRIS", "Prisma"],
+    Tools: ["Git", "Unity Editor", "VS Code", "InterSystems IRIS"],
+  };
+
+  const experiences = [
+    {
+      role: "Software Developer",
+      company: "Matrix",
+      period: "Nov 2022 - Present",
+      type: "Full-time",
+      achievements: [
+        "Developed responsive and intuitive user interfaces for ERP systems",
+        "Implemented efficient software solutions while maintaining clean, maintainable code",
+        "Collaborated with cross-functional teams to deliver high-quality software products",
+        "Applied object-oriented programming principles to create scalable solutions",
+      ],
+    },
+    {
+      role: "Anti-Fraud Analyst",
+      company: "RSA Security",
+      period: "Jun 2022 - Nov 2022",
+      type: "Full-time",
+      achievements: [
+        "Analyzed and responded to security threats in real-time",
+        "Developed automated solutions to enhance threat detection efficiency",
+        "Demonstrated strong analytical and problem-solving skills",
+      ],
+    },
+  ];
+
+  const education = [
+    {
+      degree: "Game Design And Development Diploma",
+      institution: "The Open University - Tel Aviv",
+      period: "Jan 2024 - Jan 2025",
+      focus: [
+        "Unity Development",
+        "Unreal Engine",
+        "C# Programming",
+        "Game Design Principles",
+        "3D Modeling with Maya",
+      ],
+    },
+    {
+      degree: "Full-Stack Java Development",
+      institution: "John Bryce - Tel Aviv",
+      period: "Feb 2021 - May 2021",
+      focus: [
+        "Java Development",
+        "MySQL Database",
+        "Spring Framework",
+        "React Frontend",
+        "JavaScript",
+      ],
+    },
+  ];
+
+  const projects = [
+    {
+      title: "Undead Unrest",
+      subtitle: "Unity Mobile/PC Game",
+      description: [
+        "Developed a 2D roguelite game targeting both mobile and PC platforms using Unity and C#",
+        "Implemented procedural level generation and progressive difficulty scaling",
+        "Created engaging combat mechanics and enemy AI behavior systems",
+        "Designed cross-platform UI for touch and keyboard/mouse inputs",
+        "Utilized object pooling and optimization techniques for smooth mobile performance",
+      ],
+    },
+    {
+      title: "Clear of Mind",
+      subtitle: "3D Detective Game",
+      description: [
+        "Led development of a 3D detective game featuring interactive investigation mechanics",
+        "Designed and implemented a skill-based mini-game system",
+        "Created NPC interaction system with branching dialogue",
+        "Developed investigation mechanics for evidence collection and analysis",
+        "Implemented 3D character movement and camera controls for exploration",
+      ],
+    },
+  ];
+
   return (
-    <div className="max-w-4xl mx-auto p-8 font-sans">
+    <div className="flex flex-col gap-8 py-8 md:py-12 max-w-6xl mx-auto">
       {/* Header */}
-      <header className="text-center border-b-2 border-gray-800 pb-5 mb-8">
-        <h1 className="text-3xl font-bold text-primary-800 mb-1">Eyal Label</h1>
-        <div className="text-xl text-gray-600 mb-2">Software & Game Developer</div>
-        <div className="text-sm">
-          <span>Kfar Sava, 4428053 | </span>
-          <a href="tel:0506441480" className="text-blue-600 hover:underline">0506441480</a>
-          <span> | </span>
-          <a href="mailto:eyal.label1@gmail.com" className="text-blue-600 hover:underline">eyal.label1@gmail.com</a>
-          <br />
-
-        </div>
-      </header>
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center space-y-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h1 className={title()}>Professional Experience</h1>
+        <p className={subtitle({ class: "mt-4" })}>
+          My journey in software and game development
+        </p>
+      </MotionDiv>
 
       {/* Professional Summary */}
-      <section className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 border-b border-gray-300 pb-1 mb-3">Professional Summary</h2>
-        <p>Full-stack software developer with 2.5 years of experience in enterprise software development. Proven track record in developing efficient, scalable solutions using modern technologies. Strong foundation in both front-end and back-end development, with expertise in C#, Java, React, And Unity. 
-           Combining software development experience with a passion for game development, I bring strong problem-solving abilities and attention to detail to create engaging gaming and interactive experiences.</p>
-      </section>
+      <MotionCard
+        animate={{ opacity: 1, y: 0 }}
+        className="p-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+      >
+        <CardHeader>
+          <h2 className="text-2xl font-bold">Professional Summary</h2>
+        </CardHeader>
+        <CardBody>
+          <p className="text-default-700 leading-relaxed">
+            Full-stack software developer with 2.5+ years of experience in
+            enterprise software development. Proven track record in developing
+            efficient, scalable solutions using modern technologies. Strong
+            foundation in both front-end and back-end development, with
+            expertise in C#, Java, React, and Unity. Combining software
+            development experience with a passion for game development, I bring
+            strong problem-solving abilities and attention to detail to create
+            engaging gaming and interactive experiences.
+          </p>
+        </CardBody>
+      </MotionCard>
+
+      {/* Contact Information */}
+      <MotionCard
+        animate={{ opacity: 1, y: 0 }}
+        className="p-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <CardHeader>
+          <h2 className="text-2xl font-bold">Contact Information</h2>
+        </CardHeader>
+        <CardBody className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p className="text-sm text-default-600">Location</p>
+              <p className="font-medium">Kfar Sava, Israel</p>
+            </div>
+            <div>
+              <p className="text-sm text-default-600">Phone</p>
+              <Link
+                className="font-medium text-primary hover:underline"
+                href="tel:0506441480"
+              >
+                0506441480
+              </Link>
+            </div>
+            <div>
+              <p className="text-sm text-default-600">Email</p>
+              <Link
+                className="font-medium text-primary hover:underline"
+                href="mailto:eyal.label1@gmail.com"
+              >
+                eyal.label1@gmail.com
+              </Link>
+            </div>
+            <div className="flex gap-2">
+              <Button
+                isExternal
+                as={Link}
+                href={siteConfig.links.github}
+                size="sm"
+                startContent={<GithubIcon size={16} />}
+                variant="flat"
+              >
+                GitHub
+              </Button>
+              <Button
+                isExternal
+                as={Link}
+                href={siteConfig.links.linkedin}
+                size="sm"
+                startContent={<LinkedInIcon size={16} />}
+                variant="flat"
+              >
+                LinkedIn
+              </Button>
+            </div>
+          </div>
+        </CardBody>
+      </MotionCard>
 
       {/* Technical Skills */}
-      <section className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 border-b border-gray-300 pb-1 mb-3">Technical Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="mb-3">
-            <strong className="text-gray-800">Game Development:</strong> Unity Engine, C#,Unreal Engine, Game Design Patterns, 3D Modeling (Maya)
-          </div>
-          <div>
-            <strong>Programming Languages:</strong> C#, Java, JavaScript, TypeScript
-          </div>
-          <div>
-            <strong>Frontend:</strong> React, Next.js, CSS3, Modern JavaScript
-          </div>
-          <div>
-            <strong>Backend:</strong> Spring, .NET, RESTful APIs, Node.js
-          </div>
-          <div>
-            <strong>Databases:</strong> MySQL, SQL , MongoDB, IRIS, Prisma
-          </div>
-          <div>
-            <strong>Tools & Platforms:</strong> Git, InterSystems IRIS
-          </div>
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="space-y-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+      >
+        <h2 className="text-2xl font-bold text-center">Technical Skills</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {Object.entries(skills).map(([category, skillList], index) => (
+            <MotionCard
+              key={category}
+              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+            >
+              <CardHeader className="pb-2">
+                <h3 className="text-lg font-semibold">{category}</h3>
+              </CardHeader>
+              <CardBody>
+                <div className="flex flex-wrap gap-1">
+                  {skillList.map((skill) => (
+                    <Chip
+                      key={skill}
+                      className="text-xs"
+                      color="primary"
+                      size="sm"
+                      variant="flat"
+                    >
+                      {skill}
+                    </Chip>
+                  ))}
+                </div>
+              </CardBody>
+            </MotionCard>
+          ))}
         </div>
-      </section>
+      </MotionDiv>
 
-      
+      <Divider />
 
       {/* Professional Experience */}
-      <section className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 border-b border-gray-300 pb-1 mb-3">Professional Experience</h2>
-        
-        <div className="mb-4">
-          <div className="flex justify-between mb-2">
-            <div>
-              <span className="font-bold text-gray-800">Software Developer</span> | 
-              <span className="font-bold"> Matrix</span>
-            </div>
-            <span className="text-gray-600">2022-11 - Present</span>
-          </div>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Developed responsive and intuitive user interfaces for ERP systems</li>
-            <li>Implemented efficient software solutions while maintaining clean, maintainable code</li>
-            <li>Collaborated with cross-functional teams to deliver high-quality software products</li>
-            <li>Applied object-oriented programming principles to create scalable solutions</li>
-          </ul>
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="space-y-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
+        <h2 className="text-2xl font-bold text-center">Work Experience</h2>
+        <div className="space-y-4">
+          {experiences.map((exp, index) => (
+            <MotionCard
+              key={exp.company}
+              animate={{ opacity: 1, x: 0 }}
+              className="hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+            >
+              <CardHeader className="pb-2">
+                <div className="flex justify-between items-start w-full">
+                  <div>
+                    <h3 className="text-xl font-bold">{exp.role}</h3>
+                    <p className="text-lg text-primary">{exp.company}</p>
+                  </div>
+                  <div className="text-right">
+                    <Chip color="primary" size="sm" variant="flat">
+                      {exp.type}
+                    </Chip>
+                    <p className="text-sm text-default-600 mt-1">
+                      {exp.period}
+                    </p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardBody>
+                <ul className="space-y-2">
+                  {exp.achievements.map((achievement, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-primary mt-1.5 text-xs">●</span>
+                      <span className="text-default-700">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardBody>
+            </MotionCard>
+          ))}
         </div>
+      </MotionDiv>
 
-        <div className="mb-4">
-          <div className="flex justify-between mb-2">
-            <div>
-              <span className="font-bold text-gray-800">Anti-Fraud Analyst</span> | 
-              <span className="font-bold"> RSA Security</span>
-            </div>
-            <span className="text-gray-600">2022-06 - 2022-11</span>
-          </div>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Analyzed and responded to security threats in real-time</li>
-            <li>Developed automated solutions to enhance threat detection efficiency</li>
-            <li>Demonstrated strong analytical and problem-solving skills</li>
-          </ul>
-        </div>
-      </section>
+      <Divider />
 
       {/* Education */}
-      <section className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 border-b border-gray-300 pb-1 mb-3">Education</h2>
-        
-        <div className="mb-4">
-          <div className="flex justify-between mb-2">
-            <div>
-              <span className="font-bold text-gray-800">Game Design And Development Diploma</span> | 
-              <span className="font-bold"> The Open University - Tel Aviv</span>
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="space-y-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.7 }}
+      >
+        <h2 className="text-2xl font-bold text-center">Education</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {education.map((edu, index) => (
+            <MotionCard
+              key={edu.institution}
+              animate={{ opacity: 1, y: 0 }}
+              className="hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+            >
+              <CardHeader className="pb-2">
+                <div className="space-y-2">
+                  <h3 className="text-lg font-bold">{edu.degree}</h3>
+                  <p className="text-primary">{edu.institution}</p>
+                  <p className="text-sm text-default-600">{edu.period}</p>
+                </div>
+              </CardHeader>
+              <CardBody>
+                <div className="flex flex-wrap gap-1">
+                  {edu.focus.map((subject) => (
+                    <Chip
+                      key={subject}
+                      className="text-xs"
+                      color="secondary"
+                      size="sm"
+                      variant="flat"
+                    >
+                      {subject}
+                    </Chip>
+                  ))}
+                </div>
+              </CardBody>
+            </MotionCard>
+          ))}
+        </div>
+      </MotionDiv>
+
+      <Divider />
+
+      {/* Game Projects */}
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="space-y-6"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.9 }}
+      >
+        <h2 className="text-2xl font-bold text-center">Notable Projects</h2>
+        <div className="space-y-4">
+          {projects.map((project, index) => (
+            <MotionCard
+              key={project.title}
+              animate={{ opacity: 1, y: 0 }}
+              className="hover:shadow-lg transition-shadow"
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 1.0 + index * 0.1 }}
+            >
+              <CardHeader className="pb-2">
+                <div className="space-y-1">
+                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  <p className="text-primary">{project.subtitle}</p>
+                </div>
+              </CardHeader>
+              <CardBody>
+                <ul className="space-y-2">
+                  {project.description.map((desc, i) => (
+                    <li key={i} className="flex items-start gap-2">
+                      <span className="text-primary mt-1.5 text-xs">●</span>
+                      <span className="text-default-700">{desc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardBody>
+            </MotionCard>
+          ))}
+        </div>
+      </MotionDiv>
+
+      {/* Additional Information */}
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-4"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 1.1 }}
+      >
+        <MotionCard>
+          <CardHeader>
+            <h3 className="text-lg font-bold">Languages</h3>
+          </CardHeader>
+          <CardBody>
+            <div className="space-y-2">
+              <div className="flex justify-between">
+                <span>Hebrew</span>
+                <Chip color="success" size="sm" variant="flat">
+                  Native
+                </Chip>
+              </div>
+              <div className="flex justify-between">
+                <span>English</span>
+                <Chip color="success" size="sm" variant="flat">
+                  Fluent
+                </Chip>
+              </div>
             </div>
-            <span className="text-gray-600">2024-01 - 2025-01</span>
-          </div>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Focus areas: Unity Development, Unreal Engine, C#, Game Design Principles</li>
-            <li>Practical experience in 3D modeling using Maya</li>
-            <li>Creating original game projects using industry-standard tools</li>
-          </ul>
-        </div>
+          </CardBody>
+        </MotionCard>
 
-        <div className="mb-4">
-          <div className="flex justify-between mb-2">
-            <div>
-              <span className="font-bold text-gray-800">Full-Stack Java Development</span> | 
-              <span className="font-bold"> John Bryce - Tel Aviv</span>
+        <MotionCard>
+          <CardHeader>
+            <h3 className="text-lg font-bold">Interests</h3>
+          </CardHeader>
+          <CardBody>
+            <div className="flex flex-wrap gap-2">
+              {["Game Development", "Video Games", "Technology", "Writing"].map(
+                (interest) => (
+                  <Chip key={interest} color="default" size="sm" variant="flat">
+                    {interest}
+                  </Chip>
+                ),
+              )}
             </div>
-            <span className="text-gray-600">2021-02 - 2021-05</span>
+          </CardBody>
+        </MotionCard>
+      </MotionDiv>
+
+      {/* CTA */}
+      <MotionDiv
+        animate={{ opacity: 1, y: 0 }}
+        className="text-center py-8"
+        initial={{ opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+      >
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold">Ready to Collaborate?</h2>
+          <p className="text-default-600 max-w-2xl mx-auto">
+            I&apos;m always open to discussing new opportunities, projects, or just
+            connecting with fellow developers.
+          </p>
+          <div className="flex gap-4 justify-center">
+            <Button
+              as={Link}
+              color="primary"
+              href="/Games"
+              size="lg"
+              variant="shadow"
+            >
+              View My Projects
+            </Button>
+            <Button as={Link} href="/about" size="lg" variant="bordered">
+              Learn More About Me
+            </Button>
           </div>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Comprehensive training in Java, MySQL, Spring, React, and Javascript</li>
-            <li>Developed full-stack applications as part of coursework</li>
-          </ul>
         </div>
-      </section>
-
-    {/* Game Projects */}
-    <section className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 border-b border-gray-300 pb-1 mb-3">Game Projects</h2>
-        
-        <div className="mb-4">
-          <div className="font-bold text-gray-800 mb-2">Undead Unrest | Unity Mobile/PC Game</div>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Developed a 2D roguelite game targeting both mobile and PC platforms using Unity and C#</li>
-            <li>Implemented procedural level generation and progressive difficulty scaling</li>
-            <li>Created engaging combat mechanics and enemy AI behavior systems</li>
-            <li>Designed and implemented cross-platform UI that works seamlessly on both touch and keyboard/mouse inputs</li>
-            <li>Utilized object pooling and optimization techniques to ensure smooth performance on mobile devices</li>
-          </ul>
-        </div>
-
-        <div className="mb-4">
-          <div className="font-bold text-gray-800 mb-2">Clear of Mind | 3D Detective Game</div>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Led development of a 3D detective game featuring interactive investigation mechanics</li>
-            <li>Designed and implemented a skill-based mini-game system to enhance gameplay variety</li>
-            <li>Created an NPC interaction system with branching dialogue and consequential choices</li>
-            <li>Developed investigation mechanics allowing players to collect and analyze evidence</li>
-            <li>Implemented 3D character movement and camera controls optimized for exploration</li>
-            <li>Collaborated with team members to integrate 3D models and animations</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Languages */}
-      <section className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 border-b border-gray-300 pb-1 mb-3">Languages</h2>
-        <ul className="list-disc pl-5 space-y-1">
-          <li>Hebrew: Native</li>
-          <li>English: Fluent</li>
-        </ul>
-      </section>
-
-      {/* Interests */}
-      <section className="mb-6">
-        <h2 className="text-xl font-bold text-gray-800 border-b border-gray-300 pb-1 mb-3">Interests</h2>
-        <p>Game Development, Video Games, Technology, Writing</p>
-      </section>
+      </MotionDiv>
     </div>
   );
 }

@@ -1,56 +1,67 @@
-import { link } from "fs";
-import { title } from "process";
-
 export type SiteConfig = typeof siteConfig;
-export type ProjectPreviewProps=  {index:number, title: string, description: string, image: string, href: string};
+export type ProjectPreviewProps = {
+  index: number;
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+};
 export type ProjectPreviewList = typeof ProjectPreviewList;
 
 export const ProjectPreviewList = {
-  previews:[
-
+  previews: [
     {
-      index:1,
+      index: 1,
       title: "UNDEAD UNREST",
       description: "A 2D Rogue-Lite Game, Made in Unity",
       image: "./UUscreenShot.png",
       href: "/Games/UndeadUnrest",
-    }
-    ,
+    },
     {
-      index:2,
+      index: 2,
       title: "BUBBLE BRAWL",
-      description: "An Arena combat game made in Unity for the 2025 Global Game Jam",
+      description:
+        "An Arena combat game made in Unity for the 2025 Global Game Jam",
       image: "./BBrawlThumbnail.png",
       href: "/Games/BubbleBrawl",
-    }
-  ]
-  
+    },
+  ],
 };
+
 export const siteConfig = {
   title: "Eyal Label's Personal Website",
-  name: "Eyal Label",
-  description: "Software Engineer, Game Developer, and Web Developer",
+  name: "Eyal Label - Software Engineer & Game Developer",
+  description:
+    "Full-stack software engineer and passionate game developer specializing in Unity, React, and modern web technologies. Creating engaging digital experiences and interactive games.",
   navItems: [
-
+    {
+      label: "About",
+      href: "/about",
+    },
     {
       label: "Games",
       href: "/Games",
     },
-    
-
     {
-      label: "Proffesional Experience",
+      label: "Experience",
       href: "/Experience",
     },
   ],
   navMenuItems: [
     {
+      label: "Home",
+      href: "/",
+    },
+    {
+      label: "About",
+      href: "/about",
+    },
+    {
       label: "Games",
       href: "/Games",
     },
-
     {
-      label: "Proffesional Experience",
+      label: "Experience",
       href: "/Experience",
     },
   ],

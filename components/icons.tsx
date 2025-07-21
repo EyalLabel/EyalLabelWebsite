@@ -201,11 +201,12 @@ export const MoonFilledIcon = ({
 );
 
 export const ChevronDown = ({
-  fill="none",
-   size=24,
-    width,
-    height,
-     ...props}:IconSvgProps) => {
+  fill = "none",
+  size = 24,
+  width,
+  height,
+  ...props
+}: IconSvgProps) => {
   return (
     <svg
       fill="none"

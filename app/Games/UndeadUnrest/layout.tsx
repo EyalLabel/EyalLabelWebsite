@@ -5,9 +5,7 @@ export default function SoftwareDevCVLayout({
 }) {
   return (
     <section className="w-full h-full">
-      <div className="flex flex-col items-center w-full h-full">
-        {children}
-      </div>
+      <div className="flex flex-col items-center w-full h-full">{children}</div>
     </section>
   );
 }
