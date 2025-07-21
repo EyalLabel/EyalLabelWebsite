@@ -1,13 +1,11 @@
-export const basePath = process.env.NODE_ENV === 'production' ? '/EyalLabelWebsite' : '';
-
+// For static export with basePath, Next.js automatically handles the basePath
+// So we don't need to add it manually - just return the path as-is
 export function getInternalPath(path: string): string {
-  // Don't add basePath if it's already included or if it's an external link
-  if (path.startsWith('http') || path.startsWith(basePath)) {
+  // Don't modify external links
+  if (path.startsWith('http')) {
     return path;
   }
   
-  // Ensure path starts with /
-  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  
-  return `${basePath}${normalizedPath}`;
+  // For internal links, just ensure they start with / and let Next.js handle basePath
+  return path.startsWith('/') ? path : `/${path}`;
 }

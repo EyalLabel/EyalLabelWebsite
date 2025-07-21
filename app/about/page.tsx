@@ -241,7 +241,7 @@ export default function AboutPage() {
           >
             View My Experience
           </Button>
-          <Button as={Link}             href={getInternalPath("/Games")} size="lg" variant="bordered">
+                     <Button as={Link} href={getInternalPath("/Games")} size="lg" variant="bordered">
             See My Projects
           </Button>
         </div>

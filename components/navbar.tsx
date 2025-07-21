@@ -49,8 +49,8 @@ export const Navbar = () => {
                   {siteConfig.navItems.map((item) => {
           const fullPath = getInternalPath(item.href);
           const isActive =
-            pathname === fullPath ||
-            (item.href !== "/" && pathname.startsWith(fullPath));
+            pathname === item.href ||
+            (item.href !== "/" && pathname.startsWith(item.href));
 
           return (
             <NavbarItem key={item.href}>
@@ -124,8 +124,8 @@ export const Navbar = () => {
                   {siteConfig.navMenuItems.map((item, index) => {
           const fullPath = getInternalPath(item.href);
           const isActive =
-            pathname === fullPath ||
-            (item.href !== "/" && pathname.startsWith(fullPath));
+            pathname === item.href ||
+            (item.href !== "/" && pathname.startsWith(item.href));
 
           return (
             <NavbarMenuItem key={`${item.label}-${index}`}>
