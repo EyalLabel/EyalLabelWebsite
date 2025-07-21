@@ -10,6 +10,7 @@ import { Link } from "@heroui/link";
 import { title, subtitle } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import { GithubIcon, LinkedInIcon } from "@/components/icons";
+import { getInternalPath } from "@/lib/utils";
 
 const MotionDiv = motion.div;
 const MotionCard = motion(Card);
@@ -77,12 +78,12 @@ export default function AboutPage() {
       {/* Profile Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         {/* Profile Image & Quick Info */}
-        <MotionCard className="col-span-1">
+        <MotionCard className="col-span-1 h-fit">
           <CardBody className="text-center space-y-4 p-6">
             <div className="relative w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold">
               EL
@@ -119,7 +120,7 @@ export default function AboutPage() {
         </MotionCard>
 
         {/* About Description */}
-        <MotionCard className="col-span-1 lg:col-span-2">
+        <MotionCard className="col-span-1 lg:col-span-2 h-fit">
           <CardHeader>
             <h3 className="text-xl font-bold">Who I Am</h3>
           </CardHeader>
@@ -234,13 +235,13 @@ export default function AboutPage() {
           <Button
             as={Link}
             color="primary"
-            href="/Experience"
+            href={getInternalPath("/Experience")}
             size="lg"
             variant="shadow"
           >
             View My Experience
           </Button>
-          <Button as={Link} href="/Games" size="lg" variant="bordered">
+          <Button as={Link}             href={getInternalPath("/Games")} size="lg" variant="bordered">
             See My Projects
           </Button>
         </div>

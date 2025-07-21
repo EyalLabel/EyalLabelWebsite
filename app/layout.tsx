@@ -9,6 +9,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontInSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
+import { getInternalPath } from "@/lib/utils";
 import { GithubIcon, LinkedInIcon, HeartFilledIcon } from "@/components/icons";
 
 export const metadata: Metadata = {
@@ -122,25 +123,25 @@ export default function RootLayout({
                     <div className="grid grid-cols-2 gap-2 text-sm">
                       <Link
                         className="text-default-600 hover:text-primary"
-                        href="/"
+                        href={getInternalPath("/")}
                       >
                         Home
                       </Link>
                       <Link
                         className="text-default-600 hover:text-primary"
-                        href="/about"
+                        href={getInternalPath("/about")}
                       >
                         About
                       </Link>
                       <Link
                         className="text-default-600 hover:text-primary"
-                        href="/Games"
+                        href={getInternalPath("/Games")}
                       >
                         Games
                       </Link>
                       <Link
                         className="text-default-600 hover:text-primary"
-                        href="/Experience"
+                        href={getInternalPath("/Experience")}
                       >
                         Experience
                       </Link>

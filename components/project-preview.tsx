@@ -6,6 +6,7 @@ import { Chip } from "@heroui/chip";
 import Link from "next/link";
 
 import { ProjectPreviewProps } from "@/config/site";
+import { getInternalPath } from "@/lib/utils";
 
 const MotionCard = motion(Card);
 
@@ -56,7 +57,7 @@ export function ProjectPreview(props: ProjectPreviewProps) {
             as={Link}
             className="flex-1 font-semibold"
             color="primary"
-            href={props.href}
+            href={getInternalPath(props.href)}
             startContent={
               <svg
                 fill="currentColor"

@@ -10,6 +10,7 @@ import { useState } from "react";
 
 import { title, subtitle } from "@/components/primitives";
 import { ProjectPreviewList } from "@/config/site";
+import { getInternalPath } from "@/lib/utils";
 
 const MotionDiv = motion.div;
 const MotionCard = motion(Card);
@@ -312,13 +313,13 @@ export default function GamesPage() {
           <Button
             as={Link}
             color="primary"
-            href="/Experience"
+            href={getInternalPath("/Experience")}
             size="lg"
             variant="shadow"
           >
             View My Experience
           </Button>
-          <Button as={Link} href="/about" size="lg" variant="bordered">
+          <Button as={Link}             href={getInternalPath("/about")} size="lg" variant="bordered">
             Get to Know Me
           </Button>
         </div>

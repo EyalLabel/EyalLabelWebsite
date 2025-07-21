@@ -63,6 +63,7 @@ This document outlines the comprehensive improvements made to Eyal Label's perso
 - **Skills Matrix**: Organized technical skills by category
 - **Achievement Timeline**: Visual representation of career milestones
 - **Contact Integration**: Easy ways to connect and collaborate
+- **Fixed Alignment Issues**: Resolved card misalignment with proper grid layout and `h-fit` classes
 
 ### Experience Page Enhancement
 - **Professional Layout**: Clean, modern CV-style presentation
@@ -117,6 +118,30 @@ This document outlines the comprehensive improvements made to Eyal Label's perso
 - **Component Structure**: Modular, maintainable architecture
 - **Performance Patterns**: Optimal React patterns and practices
 
+## 🔗 Navigation & Routing Fixes
+
+### BasePath Support Implementation
+- **Created Utility Function**: Added `getInternalPath()` utility in `lib/utils.ts` to handle basePath properly
+- **Fixed All Internal Links**: Updated all internal navigation links throughout the site to use basePath
+- **Updated Components**: Modified navbar, footer, project previews, and all page components to use proper paths
+- **Active State Detection**: Fixed navigation active states to work with basePath
+- **Cross-Component Consistency**: Ensured all components use the basePath utility for internal navigation
+
+### Specific Components Fixed
+- **Home Page**: All CTA buttons and navigation links now use basePath
+- **About Page**: Fixed alignment issues and internal links
+- **Experience Page**: Updated navigation and call-to-action links
+- **Games Page**: Fixed project links and internal navigation
+- **Navbar Component**: Updated both desktop and mobile navigation with basePath support
+- **Footer Component**: Fixed all quick links to use proper basePath
+- **Project Components**: Updated project preview and list components
+- **Side Navigation**: Fixed game navigation links
+
+### Layout Improvements
+- **About Page Grid**: Fixed misalignment issues with `items-start` and `h-fit` classes
+- **Card Heights**: Resolved card height inconsistencies across components
+- **Responsive Behavior**: Improved responsive grid behavior on all screen sizes
+
 ## 📊 Results
 
 ### Performance Improvements
@@ -137,4 +162,10 @@ This document outlines the comprehensive improvements made to Eyal Label's perso
 - ✅ Proper TypeScript implementation
 - ✅ Accessibility compliance
 
-This comprehensive overhaul transforms the site from a basic template into a professional, engaging portfolio that effectively showcases Eyal Label's skills and experience as a software engineer and game developer.
+### Navigation & Routing
+- ✅ All internal links work correctly with basePath
+- ✅ Navigation active states function properly
+- ✅ Consistent routing behavior across all components
+- ✅ Fixed alignment issues in About page components
+
+This comprehensive overhaul transforms the site from a basic template into a professional, engaging portfolio that effectively showcases Eyal Label's skills and experience as a software engineer and game developer. The recent fixes ensure proper navigation functionality and visual consistency across all devices and deployment environments.

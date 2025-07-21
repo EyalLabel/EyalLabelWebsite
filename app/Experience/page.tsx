@@ -10,6 +10,7 @@ import { Link } from "@heroui/link";
 import { title, subtitle } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import { GithubIcon, LinkedInIcon } from "@/components/icons";
+import { getInternalPath } from "@/lib/utils";
 
 const MotionDiv = motion.div;
 const MotionCard = motion(Card);
@@ -446,13 +447,13 @@ export default function ExperiencePage() {
             <Button
               as={Link}
               color="primary"
-              href="/Games"
+              href={getInternalPath("/Games")}
               size="lg"
               variant="shadow"
             >
               View My Projects
             </Button>
-            <Button as={Link} href="/about" size="lg" variant="bordered">
+            <Button as={Link}             href={getInternalPath("/about")} size="lg" variant="bordered">
               Learn More About Me
             </Button>
           </div>

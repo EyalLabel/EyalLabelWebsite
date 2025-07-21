@@ -11,6 +11,7 @@ import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import { GithubIcon, LinkedInIcon } from "@/components/icons";
 import { ProjectList } from "@/components/ProjectsList";
+import { getInternalPath } from "@/lib/utils";
 
 const MotionDiv = motion.div;
 const MotionCard = motion(Card);
@@ -61,7 +62,7 @@ export default function Home() {
             as={Link}
             className="font-semibold"
             color="primary"
-            href="/about"
+            href={getInternalPath("/about")}
             size="lg"
             variant="shadow"
           >
@@ -70,7 +71,7 @@ export default function Home() {
           <Button
             as={Link}
             className="font-semibold"
-            href="/Experience"
+            href={getInternalPath("/Experience")}
             size="lg"
             variant="bordered"
           >
@@ -153,7 +154,7 @@ export default function Home() {
           <Button
             as={Link}
             color="primary"
-            href="/Games"
+            href={getInternalPath("/Games")}
             size="lg"
             variant="ghost"
           >
