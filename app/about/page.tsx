@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Card, CardBody, CardHeader } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Divider } from "@heroui/divider";
-import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 
 import { title, subtitle } from "@/components/primitives";
@@ -93,28 +92,22 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="mobile-flex-wrap gap-2 justify-center">
-            <Button
+            <Link
               isExternal
-              as={Link}
               href={siteConfig.links.github}
-              size="sm"
-              className="mobile-button"
-              startContent={<GithubIcon size={16} />}
-              variant="flat"
+              className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-3 min-w-16 h-8 transition-transform-colors-opacity motion-reduce:transition-none bg-default/40 text-default-foreground data-[hover=true]:opacity-hover mobile-button"
             >
+              <GithubIcon size={16} />
               GitHub
-            </Button>
-            <Button
+            </Link>
+            <Link
               isExternal
-              as={Link}
               href={siteConfig.links.linkedin}
-              size="sm"
-              className="mobile-button"
-              startContent={<LinkedInIcon size={16} />}
-              variant="flat"
+              className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-3 min-w-16 h-8 transition-transform-colors-opacity motion-reduce:transition-none bg-default/40 text-default-foreground data-[hover=true]:opacity-hover mobile-button"
             >
+              <LinkedInIcon size={16} />
               LinkedIn
-            </Button>
+            </Link>
           </div>
         </motion.div>
 
@@ -231,23 +224,18 @@ export default function AboutPage() {
           development.
         </p>
         <div className="flex gap-4 justify-center">
-          <Button
-            as={Link}
-            color="primary"
+          <Link
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none shadow-lg shadow-primary/40 bg-primary text-primary-foreground data-[hover=true]:opacity-hover"
             href={getInternalPath("/Experience")}
-            size="lg"
-            variant="shadow"
           >
             View My Experience
-          </Button>
-          <Button
-            as={Link}
+          </Link>
+          <Link
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-default text-foreground data-[hover=true]:opacity-hover"
             href={getInternalPath("/Games")}
-            size="lg"
-            variant="bordered"
           >
             See My Projects
-          </Button>
+          </Link>
         </div>
       </MotionDiv>
     </div>

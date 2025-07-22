@@ -1,7 +1,6 @@
 "use client";
 
 import { Link } from "@heroui/link";
-import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Divider } from "@heroui/divider";
@@ -58,49 +57,38 @@ export default function Home() {
 
         {/* CTA Buttons */}
         <div className="mobile-flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full px-4">
-          <Button
-            as={Link}
-            className="font-semibold mobile-button w-full sm:w-auto"
-            color="primary"
+          <Link
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none shadow-lg shadow-primary/40 bg-primary text-primary-foreground data-[hover=true]:opacity-hover font-semibold mobile-button w-full sm:w-auto"
             href={getInternalPath("/about")}
-            size="lg"
-            variant="shadow"
           >
             Learn More About Me
-          </Button>
-          <Button
-            as={Link}
-            className="font-semibold mobile-button w-full sm:w-auto"
+          </Link>
+          <Link
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-default text-foreground data-[hover=true]:opacity-hover font-semibold mobile-button w-full sm:w-auto"
             href={getInternalPath("/Experience")}
-            size="lg"
-            variant="bordered"
           >
             View Experience
-          </Button>
+          </Link>
         </div>
 
         {/* Social Links */}
         <div className="flex gap-4 justify-center pt-4">
-          <Button
+          <Link
             isExternal
-            isIconOnly
             aria-label="GitHub Profile"
-            as={Link}
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-0 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-transparent text-default-foreground data-[hover=true]:bg-default/40 min-w-10 w-10 h-10"
             href={siteConfig.links.github}
-            variant="light"
           >
             <GithubIcon size={24} />
-          </Button>
-          <Button
+          </Link>
+          <Link
             isExternal
-            isIconOnly
             aria-label="LinkedIn Profile"
-            as={Link}
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-0 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-transparent text-default-foreground data-[hover=true]:bg-default/40 min-w-10 w-10 h-10"
             href={siteConfig.links.linkedin}
-            variant="light"
           >
             <LinkedInIcon size={24} />
-          </Button>
+          </Link>
         </div>
       </MotionDiv>
 
@@ -152,15 +140,12 @@ export default function Home() {
         <ProjectList />
 
         <div className="text-center pt-4">
-          <Button
-            as={Link}
-            color="primary"
+          <Link
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium bg-transparent px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none border-primary text-primary data-[hover=true]:!bg-primary data-[hover=true]:!text-primary-foreground"
             href={getInternalPath("/Games")}
-            size="lg"
-            variant="ghost"
           >
             View All Projects
-          </Button>
+          </Link>
         </div>
       </MotionDiv>
 
