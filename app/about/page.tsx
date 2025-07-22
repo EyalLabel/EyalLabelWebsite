@@ -54,16 +54,16 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="mobile-flex-col gap-6 py-4 sm:py-8 md:py-12 max-w-7xl mx-auto">
+    <div className="mobile-flex-col gap-6 py-4 sm:py-8 md:py-12">
       {/* Header Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="text-center space-y-4 sm:space-y-6 px-4 sm:px-6 lg:px-8"
+        className="text-center space-y-4 sm:space-y-6 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
       >
         <h1 className="mobile-text-3xl sm:text-4xl lg:text-5xl font-bold">About Me</h1>
-        <p className="mobile-text-lg sm:text-xl text-default-600">
+        <p className="mobile-text-lg sm:text-xl text-default-600 max-w-2xl mx-auto">
           Get to know more about my journey, skills, and passion
         </p>
       </MotionDiv>
@@ -71,7 +71,7 @@ export default function AboutPage() {
       {/* Profile Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 w-full px-4 sm:px-6 lg:px-8"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 w-full px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
@@ -145,7 +145,7 @@ export default function AboutPage() {
       {/* Skills Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-6 px-4 sm:px-6 lg:px-8"
+        className="space-y-6 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
@@ -180,7 +180,7 @@ export default function AboutPage() {
       {/* Achievements Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-6 px-4 sm:px-6 lg:px-8"
+        className="space-y-6 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
@@ -213,7 +213,7 @@ export default function AboutPage() {
       {/* Contact CTA */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="text-center space-y-4 py-8 px-4 sm:px-6 lg:px-8"
+        className="text-center space-y-4 py-8 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.8 }}
       >
