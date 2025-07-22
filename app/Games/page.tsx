@@ -213,25 +213,23 @@ export default function GamesPage() {
 
             <CardFooter className="pt-0">
               <div className="flex gap-2 w-full">
-                <Button
-                  as={Link}
-                  className="flex-1 font-semibold"
-                  color="primary"
+                <Link
+                  className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-4 min-w-20 h-10 text-small gap-2 rounded-medium [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none shadow-lg shadow-primary/40 bg-primary text-primary-foreground data-[hover=true]:opacity-hover flex-1 font-semibold"
                   href={project.href}
-                  startContent={
-                    <svg
-                      fill="currentColor"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      width="16"
-                    >
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  }
-                  variant="shadow"
                 >
+                  <svg
+                    fill="currentColor"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    aria-hidden="true"
+                    focusable="false"
+                    tabIndex={-1}
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
                   Play Game
-                </Button>
+                </Link>
                 <Button
                   aria-label="View project details"
                   className="min-w-0 px-3"
@@ -310,18 +308,18 @@ export default function GamesPage() {
           amazing together!
         </p>
         <div className="flex gap-4 justify-center">
-          <Button
-            as={Link}
-            color="primary"
+          <Link
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none shadow-lg shadow-primary/40 bg-primary text-primary-foreground data-[hover=true]:opacity-hover"
             href={getInternalPath("/Experience")}
-            size="lg"
-            variant="shadow"
           >
             View My Experience
-          </Button>
-          <Button as={Link}             href={getInternalPath("/about")} size="lg" variant="bordered">
+          </Link>
+          <Link
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-default text-foreground data-[hover=true]:opacity-hover"
+            href={getInternalPath("/about")}
+          >
             Get to Know Me
-          </Button>
+          </Link>
         </div>
       </MotionDiv>
     </div>

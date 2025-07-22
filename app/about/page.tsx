@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Card, CardBody, CardHeader } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Divider } from "@heroui/divider";
-import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 
 import { title, subtitle } from "@/components/primitives";
@@ -55,16 +54,18 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="flex flex-col gap-8 py-8 md:py-12 max-w-4xl mx-auto">
+    <div className="w-full max-w-screen-lg mobile-flex-col gap-6 py-4 sm:py-8 md:py-12">
       {/* Header Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="text-center space-y-6"
+        className="text-center space-y-4 sm:space-y-6 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className={title()}>About Me</h1>
-        <p className={subtitle({ class: "mt-4" })}>
+        <h1 className="mobile-text-3xl sm:text-4xl lg:text-5xl font-bold">
+          About Me
+        </h1>
+        <p className="mobile-text-lg sm:text-xl text-default-600 max-w-2xl mx-auto">
           Get to know more about my journey, skills, and passion
         </p>
       </MotionDiv>
@@ -72,47 +73,43 @@ export default function AboutPage() {
       {/* Profile Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full overflow-x-hidden"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 w-full px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         {/* Profile Image & Quick Info */}
         <motion.div
-          className="w-full max-w-sm mx-auto bg-content1 rounded-2xl p-6 shadow-sm flex flex-col items-center gap-4"
+          className="mobile-card bg-content1 rounded-2xl p-4 sm:p-6 shadow-sm mobile-flex-col items-center gap-4 max-w-md mx-auto lg:mx-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold overflow-hidden">
+          <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl sm:text-4xl font-bold overflow-hidden">
             EL
           </div>
           <div className="text-center">
-            <h2 className="text-2xl font-bold">Eyal Label</h2>
-            <p className="text-default-600">
+            <h2 className="mobile-text-xl sm:text-2xl font-bold">Eyal Label</h2>
+            <p className="mobile-text-sm sm:text-base text-default-600">
               Software Engineer & Game Developer
             </p>
           </div>
-          <div className="flex gap-2 justify-center flex-wrap">
-            <Button
+          <div className="mobile-flex-wrap gap-2 justify-center">
+            <Link
               isExternal
-              as={Link}
               href={siteConfig.links.github}
-              size="sm"
-              startContent={<GithubIcon size={16} />}
-              variant="flat"
+              className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-3 min-w-16 h-8 transition-transform-colors-opacity motion-reduce:transition-none bg-default/40 text-default-foreground data-[hover=true]:opacity-hover mobile-button"
             >
+              <GithubIcon size={16} />
               GitHub
-            </Button>
-            <Button
+            </Link>
+            <Link
               isExternal
-              as={Link}
               href={siteConfig.links.linkedin}
-              size="sm"
-              startContent={<LinkedInIcon size={16} />}
-              variant="flat"
+              className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-3 min-w-16 h-8 transition-transform-colors-opacity motion-reduce:transition-none bg-default/40 text-default-foreground data-[hover=true]:opacity-hover mobile-button"
             >
+              <LinkedInIcon size={16} />
               LinkedIn
-            </Button>
+            </Link>
           </div>
         </motion.div>
 
@@ -150,12 +147,12 @@ export default function AboutPage() {
       {/* Skills Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-6"
+        className="space-y-6 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <h2 className="text-2xl font-bold text-center">Technical Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {Object.entries(skills).map(([category, skillList], index) => (
             <MotionCard
               key={category}
@@ -185,7 +182,7 @@ export default function AboutPage() {
       {/* Achievements Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-6"
+        className="space-y-6 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
@@ -218,7 +215,7 @@ export default function AboutPage() {
       {/* Contact CTA */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="text-center space-y-4 py-8"
+        className="text-center space-y-4 py-8 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.8 }}
       >
@@ -229,23 +226,18 @@ export default function AboutPage() {
           development.
         </p>
         <div className="flex gap-4 justify-center">
-          <Button
-            as={Link}
-            color="primary"
+          <Link
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none shadow-lg shadow-primary/40 bg-primary text-primary-foreground data-[hover=true]:opacity-hover"
             href={getInternalPath("/Experience")}
-            size="lg"
-            variant="shadow"
           >
             View My Experience
-          </Button>
-          <Button
-            as={Link}
+          </Link>
+          <Link
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none bg-transparent border-default text-foreground data-[hover=true]:opacity-hover"
             href={getInternalPath("/Games")}
-            size="lg"
-            variant="bordered"
           >
             See My Projects
-          </Button>
+          </Link>
         </div>
       </MotionDiv>
     </div>

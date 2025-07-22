@@ -8,7 +8,6 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
@@ -78,43 +77,35 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Button
+          <Link
             isExternal
-            isIconOnly
             aria-label="View GitHub profile"
-            as={Link}
-            className="hover:bg-default-100"
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-0 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-transparent text-default-foreground data-[hover=true]:bg-default/40 min-w-10 w-10 h-10 hover:bg-default-100"
             href={siteConfig.links.github}
-            variant="light"
           >
             <GithubIcon className="text-default-600" size={20} />
-          </Button>
-          <Button
+          </Link>
+          <Link
             isExternal
-            isIconOnly
             aria-label="View LinkedIn profile"
-            as={Link}
-            className="hover:bg-default-100"
+            className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-0 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-transparent text-default-foreground data-[hover=true]:bg-default/40 min-w-10 w-10 h-10 hover:bg-default-100"
             href={siteConfig.links.linkedin}
-            variant="light"
           >
             <LinkedInIcon className="text-default-600" size={20} />
-          </Button>
+          </Link>
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Button
+        <Link
           isExternal
-          isIconOnly
           aria-label="View GitHub profile"
-          as={Link}
+          className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-0 !gap-0 transition-transform-colors-opacity motion-reduce:transition-none bg-transparent text-default-foreground data-[hover=true]:bg-default/40 min-w-10 w-10 h-10"
           href={siteConfig.links.github}
-          variant="light"
         >
           <GithubIcon className="text-default-600" size={20} />
-        </Button>
+        </Link>
         <ThemeSwitch />
         <NavbarMenuToggle aria-label="Toggle navigation menu" />
       </NavbarContent>
@@ -147,26 +138,22 @@ export const Navbar = () => {
 
           {/* Mobile Social Links */}
           <div className="flex gap-2 mt-4 px-2">
-            <Button
+            <Link
               isExternal
-              as={Link}
               href={siteConfig.links.github}
-              size="sm"
-              startContent={<GithubIcon size={16} />}
-              variant="flat"
+              className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-3 min-w-16 h-8 transition-transform-colors-opacity motion-reduce:transition-none bg-default/40 text-default-foreground data-[hover=true]:opacity-hover"
             >
+              <GithubIcon size={16} />
               GitHub
-            </Button>
-            <Button
+            </Link>
+            <Link
               isExternal
-              as={Link}
               href={siteConfig.links.linkedin}
-              size="sm"
-              startContent={<LinkedInIcon size={16} />}
-              variant="flat"
+              className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-small gap-2 rounded-medium px-3 min-w-16 h-8 transition-transform-colors-opacity motion-reduce:transition-none bg-default/40 text-default-foreground data-[hover=true]:opacity-hover"
             >
+              <LinkedInIcon size={16} />
               LinkedIn
-            </Button>
+            </Link>
           </div>
         </div>
       </NavbarMenu>

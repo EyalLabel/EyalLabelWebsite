@@ -4,12 +4,12 @@ import { Button } from "@heroui/button";
 import React, { useState, useEffect } from "react";
 
 export default function UndeadUnrestPage() {
-  const { unityProvider, loadingProgression, isLoaded, requestFullscreen } =
+  const { unityProvider, loadingProgression, isLoaded, requestFullscreen, unload } =
     useUnityContext({
-      loaderUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.loader.js",
-      dataUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.data",
-      frameworkUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.framework.js",
-      codeUrl: "/EyalLabelWebsite/UUWeb/Build/UUWeb.wasm",
+      loaderUrl: "/UUWeb/Build/UUWeb.loader.js",
+      dataUrl: "/UUWeb/Build/UUWeb.data",
+      frameworkUrl: "/UUWeb/Build/UUWeb.framework.js",
+      codeUrl: "/UUWeb/Build/UUWeb.wasm",
     });
   const [devicePixelRatio, setDevicePixelRatio] = useState(
     typeof window !== "undefined" ? window.devicePixelRatio : 1,
@@ -39,6 +39,15 @@ export default function UndeadUnrestPage() {
     },
     [devicePixelRatio],
   );
+
+  // Cleanup Unity instance and stop audio when component unmounts
+  useEffect(() => {
+    return () => {
+      if (unload) {
+        unload();
+      }
+    };
+  }, [unload]);
   function handleClick() {
     requestFullscreen(true);
   }
