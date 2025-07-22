@@ -6,10 +6,10 @@ import React, { useState, useEffect } from "react";
 export default function BubbleBrawlPage() {
   const { unityProvider, loadingProgression, isLoaded, requestFullscreen } =
     useUnityContext({
-      loaderUrl: "/EyalLabelWebsite/BubbleBrawl/Build/Builds.loader.js",
-      dataUrl: "/EyalLabelWebsite/BubbleBrawl/Build/Builds.data",
-      frameworkUrl: "/EyalLabelWebsite/BubbleBrawl/Build/Builds.framework.js",
-      codeUrl: "/EyalLabelWebsite/BubbleBrawl/Build/Builds.wasm",
+      loaderUrl: "/BubbleBrawl/Build/Builds.loader.js",
+      dataUrl: "/BubbleBrawl/Build/Builds.data",
+      frameworkUrl: "/BubbleBrawl/Build/Builds.framework.js",
+      codeUrl: "/BubbleBrawl/Build/Builds.wasm",
     });
   const [devicePixelRatio, setDevicePixelRatio] = useState(
     typeof window !== "undefined" ? window.devicePixelRatio : 1,

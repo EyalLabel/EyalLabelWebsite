@@ -14,7 +14,7 @@ export const ProjectPreviewList = {
       index: 1,
       title: "UNDEAD UNREST",
       description: "A 2D Rogue-Lite Game, Made in Unity",
-      image: "./UUscreenShot.png",
+      image: "/UUscreenShot.png",
       href: "/Games/UndeadUnrest",
     },
     {
@@ -22,7 +22,7 @@ export const ProjectPreviewList = {
       title: "BUBBLE BRAWL",
       description:
         "An Arena combat game made in Unity for the 2025 Global Game Jam",
-      image: "./BBrawlThumbnail.png",
+      image: "/BBrawlThumbnail.png",
       href: "/Games/BubbleBrawl",
     },
   ],
