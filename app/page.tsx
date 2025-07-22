@@ -31,25 +31,25 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col gap-8 py-8 md:py-12">
+    <div className="mobile-flex-col gap-6 py-4 sm:py-8 md:py-12">
       {/* Hero Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="text-center space-y-6"
+        className="text-center space-y-4 sm:space-y-6"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="space-y-4">
-          <h1 className={title({ size: "lg" })}>
+        <div className="space-y-3 sm:space-y-4">
+          <h1 className="mobile-text-2xl sm:text-4xl lg:text-5xl font-bold">
             Hello, I&apos;m{" "}
             <span className="bg-gradient-to-br from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Eyal Label
             </span>
           </h1>
-          <h2 className={subtitle({ class: "mt-4" })}>
+          <h2 className="mobile-text-lg sm:text-xl lg:text-2xl text-default-600">
             Software Engineer, Game Developer & Creative Technologist
           </h2>
-          <p className="text-lg text-default-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="mobile-text-base sm:text-lg text-default-600 max-w-2xl mx-auto leading-relaxed px-4">
             I craft engaging digital experiences through code, from interactive
             web applications to immersive games. Passionate about clean code,
             user experience, and bringing creative ideas to life.
@@ -57,10 +57,10 @@ export default function Home() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="mobile-flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full px-4">
           <Button
             as={Link}
-            className="font-semibold"
+            className="font-semibold mobile-button w-full sm:w-auto"
             color="primary"
             href={getInternalPath("/about")}
             size="lg"
@@ -70,7 +70,7 @@ export default function Home() {
           </Button>
           <Button
             as={Link}
-            className="font-semibold"
+            className="font-semibold mobile-button w-full sm:w-auto"
             href={getInternalPath("/Experience")}
             size="lg"
             variant="bordered"
@@ -109,12 +109,12 @@ export default function Home() {
       {/* Skills Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="text-center space-y-6"
+        className="text-center space-y-4 sm:space-y-6 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <h3 className="text-2xl font-bold">Technologies & Skills</h3>
-        <div className="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+        <h3 className="mobile-text-xl sm:text-2xl font-bold">Technologies & Skills</h3>
+        <div className="mobile-flex-wrap gap-2 justify-center max-w-3xl mx-auto">
           {skills.map((skill, index) => (
             <motion.div
               key={skill}
@@ -123,9 +123,10 @@ export default function Home() {
               transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
             >
               <Chip
-                className="transition-all hover:scale-105"
+                className="mobile-button text-sm sm:text-base"
                 color="primary"
                 variant="flat"
+                size="sm"
               >
                 {skill}
               </Chip>

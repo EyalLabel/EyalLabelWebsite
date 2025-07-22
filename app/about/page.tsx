@@ -55,16 +55,16 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="flex flex-col gap-8 py-8 md:py-12 max-w-4xl mx-auto">
+    <div className="mobile-flex-col gap-6 py-4 sm:py-8 md:py-12 max-w-4xl mx-auto">
       {/* Header Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="text-center space-y-6"
+        className="text-center space-y-4 sm:space-y-6 px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className={title()}>About Me</h1>
-        <p className={subtitle({ class: "mt-4" })}>
+        <h1 className="mobile-text-3xl sm:text-4xl lg:text-5xl font-bold">About Me</h1>
+        <p className="mobile-text-lg sm:text-xl text-default-600">
           Get to know more about my journey, skills, and passion
         </p>
       </MotionDiv>
@@ -72,32 +72,33 @@ export default function AboutPage() {
       {/* Profile Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full overflow-x-hidden"
+        className="mobile-grid gap-6 lg:gap-8 w-full px-4"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         {/* Profile Image & Quick Info */}
         <motion.div
-          className="w-full max-w-sm mx-auto bg-content1 rounded-2xl p-6 shadow-sm flex flex-col items-center gap-4"
+          className="mobile-card bg-content1 rounded-2xl p-4 sm:p-6 shadow-sm mobile-flex-col items-center gap-4 max-w-sm mx-auto lg:mx-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-4xl font-bold overflow-hidden">
+          <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl sm:text-4xl font-bold overflow-hidden">
             EL
           </div>
           <div className="text-center">
-            <h2 className="text-2xl font-bold">Eyal Label</h2>
-            <p className="text-default-600">
+            <h2 className="mobile-text-xl sm:text-2xl font-bold">Eyal Label</h2>
+            <p className="mobile-text-sm sm:text-base text-default-600">
               Software Engineer & Game Developer
             </p>
           </div>
-          <div className="flex gap-2 justify-center flex-wrap">
+          <div className="mobile-flex-wrap gap-2 justify-center">
             <Button
               isExternal
               as={Link}
               href={siteConfig.links.github}
               size="sm"
+              className="mobile-button"
               startContent={<GithubIcon size={16} />}
               variant="flat"
             >
@@ -108,6 +109,7 @@ export default function AboutPage() {
               as={Link}
               href={siteConfig.links.linkedin}
               size="sm"
+              className="mobile-button"
               startContent={<LinkedInIcon size={16} />}
               variant="flat"
             >
