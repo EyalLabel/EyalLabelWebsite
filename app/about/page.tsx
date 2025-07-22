@@ -54,7 +54,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="mobile-flex-col gap-6 py-4 sm:py-8 md:py-12">
+    <div className="w-full max-w-screen-lg mobile-flex-col gap-6 py-4 sm:py-8 md:py-12">
       {/* Header Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,9 @@ export default function AboutPage() {
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="mobile-text-3xl sm:text-4xl lg:text-5xl font-bold">About Me</h1>
+        <h1 className="mobile-text-3xl sm:text-4xl lg:text-5xl font-bold">
+          About Me
+        </h1>
         <p className="mobile-text-lg sm:text-xl text-default-600 max-w-2xl mx-auto">
           Get to know more about my journey, skills, and passion
         </p>
