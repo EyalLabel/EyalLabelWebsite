@@ -54,11 +54,11 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="mobile-flex-col gap-6 py-4 sm:py-8 md:py-12 max-w-4xl mx-auto">
+    <div className="mobile-flex-col gap-6 py-4 sm:py-8 md:py-12 max-w-7xl mx-auto">
       {/* Header Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="text-center space-y-4 sm:space-y-6 px-4"
+        className="text-center space-y-4 sm:space-y-6 px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
       >
@@ -71,13 +71,13 @@ export default function AboutPage() {
       {/* Profile Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="mobile-grid gap-6 lg:gap-8 w-full px-4"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 w-full px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         {/* Profile Image & Quick Info */}
         <motion.div
-          className="mobile-card bg-content1 rounded-2xl p-4 sm:p-6 shadow-sm mobile-flex-col items-center gap-4 max-w-sm mx-auto lg:mx-0"
+          className="mobile-card bg-content1 rounded-2xl p-4 sm:p-6 shadow-sm mobile-flex-col items-center gap-4 max-w-md mx-auto lg:mx-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -145,12 +145,12 @@ export default function AboutPage() {
       {/* Skills Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-6"
+        className="space-y-6 px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
         <h2 className="text-2xl font-bold text-center">Technical Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {Object.entries(skills).map(([category, skillList], index) => (
             <MotionCard
               key={category}
@@ -180,7 +180,7 @@ export default function AboutPage() {
       {/* Achievements Section */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="space-y-6"
+        className="space-y-6 px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
@@ -213,7 +213,7 @@ export default function AboutPage() {
       {/* Contact CTA */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
-        className="text-center space-y-4 py-8"
+        className="text-center space-y-4 py-8 px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.8 }}
       >
