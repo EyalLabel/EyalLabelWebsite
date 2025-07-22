@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-        output:"export",
+    output: "export",
     images: { unoptimized: true },
-    basePath:"/EyalLabelWebsite",
+    trailingSlash: true,
+    // basePath removed for GitHub Pages deployment to root domain
 };
 
 module.exports = nextConfig;
