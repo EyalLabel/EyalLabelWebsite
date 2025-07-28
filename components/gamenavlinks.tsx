@@ -1,39 +1,42 @@
-import Link from "next/link";
+"use client";
 
-import { SkullIcon, BubbleIcon } from "./icons";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import * as Icons from "./icons";
 import { getInternalPath } from "@/lib/utils";
-// Map of links to display in the side navigation.
-// Depending on the size of the application, this would be stored in a database.
-const links = [
-  { name: "Undead Unrest", href: "/Games/UndeadUnrest", icon: SkullIcon },
-  { name: "Bubble Brawl", href: "/Games/BubbleBrawl", icon: BubbleIcon },
-  /*
-    {
-      name: 'Invoices',
-      href: '/dashboard/invoices',
-      icon: DocumentDuplicateIcon,
-    },
-    { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
-     */
-];
+import { ProjectPreviewList } from "@/config/site";
 
 export default function NavLinks() {
+  const gameLinks = ProjectPreviewList.previews.filter((p) => p.type === "game");
+  const pathname = usePathname();
   return (
-    <>
-      {links.map((link) => {
-        const LinkIcon = link.icon;
-
+    <nav className="flex flex-col gap-2 w-full">
+      {gameLinks.map((game) => {
+        const IconComponent = (game.icon && Icons[game.icon as keyof typeof Icons]) || Icons.SkullIcon;
+        const isActive = pathname === game.href || pathname === getInternalPath(game.href);
         return (
           <Link
-            key={link.name}
-            className="flex h-[48px] items-center justify-center gap-2 rounded-md bg-primary-50 p-3 text-sm font-medium hover:bg-primary-100 hover:text-secondary-600 md:flex-none md:justify-start md:p-2 md:px-3"
-            href={getInternalPath(link.href)}
+            key={game.title}
+            href={getInternalPath(game.href)}
+            className={`
+              flex items-center gap-3 rounded-lg px-3 py-2 transition-all
+              font-medium text-base
+              bg-gradient-to-r from-primary-50 to-transparent
+              hover:from-primary-100 hover:to-primary-50
+              hover:shadow-md
+              hover:text-primary-700
+              focus:outline-none focus:ring-2 focus:ring-primary-400
+              ${isActive ? "bg-primary-200 text-primary-900 shadow-lg" : "text-secondary-700"}
+            `}
+            style={{ minHeight: 48 }}
           >
-            <LinkIcon className="w-6 text-primary-600" />
-            <p className="hidden md:block text-secondary-600">{link.name}</p>
+            <span className={`flex items-center justify-center w-8 h-8 rounded-md ${isActive ? "bg-primary-300" : "bg-primary-100"}`}>
+              <IconComponent className="w-6 h-6 text-primary-600" />
+            </span>
+            <span className="hidden md:block truncate">{game.title}</span>
           </Link>
         );
       })}
-    </>
+    </nav>
   );
 }

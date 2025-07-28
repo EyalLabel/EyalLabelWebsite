@@ -10,6 +10,7 @@ import { title, subtitle } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import { GithubIcon, LinkedInIcon } from "@/components/icons";
 import { getInternalPath } from "@/lib/utils";
+import Image from "next/image";
 
 const MotionDiv = motion.div;
 const MotionCard = motion(Card);
@@ -85,7 +86,7 @@ export default function AboutPage() {
           transition={{ duration: 0.6 }}
         >
           <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-2xl sm:text-4xl font-bold overflow-hidden">
-            EL
+            <Image src="/GoodPhoto.jpeg" alt="Eyal Label" width={120} height={80} />
           </div>
           <div className="text-center">
             <h2 className="mobile-text-xl sm:text-2xl font-bold">Eyal Label</h2>

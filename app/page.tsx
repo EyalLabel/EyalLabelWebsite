@@ -5,6 +5,7 @@ import { Card, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 import { Divider } from "@heroui/divider";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
@@ -22,12 +23,12 @@ export default function Home() {
     "Next.js",
     "Unity",
     "C#",
-    "Python",
     "Node.js",
     "Tailwind CSS",
     "Game Development",
     "Web Development",
   ];
+  const [selectedProjectType, setSelectedProjectType] = useState<'game' | 'web'>('game');
 
   return (
     <div className="mobile-flex-col gap-6 py-4 sm:py-8 md:py-12">
@@ -125,7 +126,7 @@ export default function Home() {
 
       <Divider className="my-8" />
 
-      {/* Featured Projects Section */}
+      {/* Featured Projects Section with Tabs */}
       <MotionDiv
         animate={{ opacity: 1, y: 0 }}
         className="space-y-6"
@@ -136,9 +137,22 @@ export default function Home() {
           <h3 className="text-2xl font-bold">Featured Projects</h3>
           <p className="text-default-600">Check out some of my recent work</p>
         </div>
-
-        <ProjectList />
-
+        {/* Tabs */}
+        <div className="flex justify-center gap-4 pb-4">
+          <button
+            className={`px-4 py-2 rounded-t-lg font-semibold border-b-2 transition-colors ${selectedProjectType === 'game' ? 'border-primary text-primary' : 'border-transparent text-default-600 hover:text-primary'}`}
+            onClick={() => setSelectedProjectType('game')}
+          >
+            Game Projects
+          </button>
+          <button
+            className={`px-4 py-2 rounded-t-lg font-semibold border-b-2 transition-colors ${selectedProjectType === 'web' ? 'border-primary text-primary' : 'border-transparent text-default-600 hover:text-primary'}`}
+            onClick={() => setSelectedProjectType('web')}
+          >
+            Web Development Projects
+          </button>
+        </div>
+        <ProjectList type={selectedProjectType} />
         <div className="text-center pt-4">
           <Link
             className="z-0 group relative inline-flex items-center justify-center box-border appearance-none select-none whitespace-nowrap font-normal subpixel-antialiased overflow-hidden tap-highlight-transparent transform-gpu data-[pressed=true]:scale-[0.97] outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 border-medium bg-transparent px-6 min-w-24 h-12 text-medium gap-3 rounded-large [&>svg]:max-w-[theme(spacing.8)] transition-transform-colors-opacity motion-reduce:transition-none border-primary text-primary data-[hover=true]:!bg-primary data-[hover=true]:!text-primary-foreground"

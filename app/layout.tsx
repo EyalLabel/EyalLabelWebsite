@@ -181,26 +181,7 @@ export default function RootLayout({
                     © {new Date().getFullYear()} Eyal Label. All rights
                     reserved.
                   </p>
-                  <div className="flex items-center gap-1">
-                    <span>Made with</span>
-                    <HeartFilledIcon className="text-red-500" size={16} />
-                    <span>using</span>
-                    <Link
-                      isExternal
-                      className="text-primary hover:underline"
-                      href="https://heroui.com"
-                    >
-                      HeroUI
-                    </Link>
-                    <span>&</span>
-                    <Link
-                      isExternal
-                      className="text-primary hover:underline"
-                      href="https://nextjs.org"
-                    >
-                      Next.js
-                    </Link>
-                  </div>
+                 
                 </div>
               </div>
             </footer>

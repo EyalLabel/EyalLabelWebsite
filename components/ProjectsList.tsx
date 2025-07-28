@@ -5,7 +5,7 @@ import { ProjectPreviewList } from "@/config/site";
 
 const MotionDiv = motion.div;
 
-export function ProjectList() {
+export function ProjectList({ type = "game" }: { type?: "game" | "web" }) {
   return (
     <MotionDiv
       animate={{ opacity: 1 }}
@@ -14,7 +14,7 @@ export function ProjectList() {
       transition={{ duration: 0.6, delay: 0.2 }}
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 justify-items-center">
-        {ProjectPreviewList.previews.map((preview) => (
+        {ProjectPreviewList.previews.filter((preview) => preview.type === type).map((preview) => (
           <motion.div
             key={preview.index}
             animate={{ opacity: 1, y: 0 }}
