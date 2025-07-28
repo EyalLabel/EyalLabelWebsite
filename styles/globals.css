@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+
   /* Mobile-first viewport and touch optimization */
   html {
     scroll-behavior: smooth;
@@ -81,6 +84,7 @@
 }
 
 @layer components {
+
   /* Mobile-first container */
   .mobile-container {
     width: 100%;
@@ -173,9 +177,12 @@
   }
 
   @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
       opacity: 1;
     }
+
     50% {
       opacity: .5;
     }
@@ -220,6 +227,7 @@
 }
 
 @layer utilities {
+
   /* Custom backdrop blur */
   .backdrop-blur-sm {
     backdrop-filter: blur(4px);
@@ -254,6 +262,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -295,21 +304,75 @@
   }
 
   /* Mobile text sizes */
-  .mobile-text-xs { font-size: 0.75rem; line-height: 1rem; }
-  .mobile-text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-  .mobile-text-base { font-size: 1rem; line-height: 1.5rem; }
-  .mobile-text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-  .mobile-text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-  .mobile-text-2xl { font-size: 1.5rem; line-height: 2rem; }
-  .mobile-text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+  .mobile-text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .mobile-text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .mobile-text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .mobile-text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .mobile-text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .mobile-text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .mobile-text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
 
   @media (min-width: 640px) {
-    .mobile-text-xs { font-size: 0.875rem; line-height: 1.25rem; }
-    .mobile-text-sm { font-size: 1rem; line-height: 1.5rem; }
-    .mobile-text-base { font-size: 1.125rem; line-height: 1.75rem; }
-    .mobile-text-lg { font-size: 1.25rem; line-height: 1.75rem; }
-    .mobile-text-xl { font-size: 1.5rem; line-height: 2rem; }
-    .mobile-text-2xl { font-size: 1.875rem; line-height: 2.25rem; }
-    .mobile-text-3xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .mobile-text-xs {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .mobile-text-sm {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    .mobile-text-base {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+    }
+
+    .mobile-text-lg {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+
+    .mobile-text-xl {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+
+    .mobile-text-2xl {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+
+    .mobile-text-3xl {
+      font-size: 2.25rem;
+      line-height: 2.5rem;
+    }
   }
 }
