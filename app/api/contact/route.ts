@@ -3,6 +3,9 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Force dynamic rendering for API routes
+export const dynamic = "force-dynamic";
+
 // Test endpoint to verify the route is accessible
 export async function GET() {
   return NextResponse.json({ message: "Contact API is working" });
