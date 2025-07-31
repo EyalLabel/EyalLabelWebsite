@@ -3,7 +3,14 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Test endpoint to verify the route is accessible
+export async function GET() {
+  return NextResponse.json({ message: "Contact API is working" });
+}
+
 export async function POST(request: NextRequest) {
+  console.log("POST request received to /api/contact");
+
   try {
     // Check if API key is configured
     if (!process.env.RESEND_API_KEY) {
@@ -18,9 +25,11 @@ export async function POST(request: NextRequest) {
     console.log("Contact Email configured:", process.env.CONTACT_EMAIL || "Not set");
 
     const { subject, name, email, message } = await request.json();
+    console.log("Received form data:", { subject, name, email, message: message.substring(0, 50) + "..." });
 
     // Validate required fields
     if (!subject || !name || !email || !message) {
+      console.log("Validation failed - missing required fields");
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 }

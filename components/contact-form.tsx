@@ -20,7 +20,11 @@ export function ContactForm() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
+    console.log("Submitting form data:", formData);
+
     try {
+      console.log("Making API request to /api/contact...");
+      
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -29,7 +33,11 @@ export function ContactForm() {
         body: JSON.stringify(formData),
       });
 
+      console.log("Response status:", response.status);
+      console.log("Response headers:", response.headers);
+
       const result = await response.json();
+      console.log("Response data:", result);
 
       if (response.ok) {
         setSubmitStatus("success");
