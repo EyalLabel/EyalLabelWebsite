@@ -19,6 +19,7 @@ import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { getInternalPath } from "@/lib/utils";
 import { GithubIcon, CustomLogo, LinkedInIcon } from "@/components/icons";
+import { ContactForm } from "@/components/contact-form";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -77,6 +78,7 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
+          <ContactForm />
           <Link
             isExternal
             aria-label="View GitHub profile"

@@ -51,6 +51,7 @@ export const siteConfig = {
   name: "Eyal Label - Software Engineer & Game Developer",
   description:
     "Full-stack software engineer and passionate game developer specializing in Unity, React, and modern web technologies. Creating engaging digital experiences and interactive games.",
+  contactEmail: "eyal.label1@gmail.com", // Replace with your actual email
   navItems: [
     {
       label: "About",
