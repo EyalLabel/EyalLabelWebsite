@@ -134,6 +134,37 @@ export default function SoftwareDevCVPage() {
         </div>
       </section>
 
+      {/* Personal Projects */}
+      <section className="mb-6">
+        <h2 className="text-xl font-bold border-b border-black pb-2 mb-3">
+          Personal Projects
+        </h2>
+
+        <div className="mb-4">
+          <div className="flex justify-between">
+            <div>
+              <span className="font-bold">Monsterdle</span> |
+              <span className="font-bold ml-1">Daily Monster Guessing Game</span>
+            </div>
+            <span className="text-sm">In Development</span>
+          </div>
+          <ul className="list-disc pl-5">
+            <li>
+              Wordle-like web game where players guess a different monster each day.
+            </li>
+            <li>
+              Planned features: shareable results, streak tracking, accessibility-friendly hints.
+            </li>
+            <li>
+              Tech stack: Next.js, TypeScript, Tailwind CSS, Edge runtime.
+            </li>
+            <li>
+              Focus areas: performant gameplay loop, fair hint algorithms, scalable content pipeline.
+            </li>
+          </ul>
+        </div>
+      </section>
+
       {/* Education */}
       <section className="mb-6">
         <h2 className="text-xl font-bold border-b border-black pb-2 mb-3">

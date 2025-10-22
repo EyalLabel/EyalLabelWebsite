@@ -135,7 +135,7 @@ export default function ExperiencePage() {
         </CardHeader>
         <CardBody>
           <p className="text-default-700 leading-relaxed">
-            Full-stack software developer with 2.5+ years of experience in
+            Full-stack software developer with 3 years of experience in
             enterprise software development. Proven track record in developing
             efficient, scalable solutions using modern technologies. Strong
             foundation in both front-end and back-end development, with

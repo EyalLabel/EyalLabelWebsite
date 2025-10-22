@@ -43,6 +43,16 @@ export const ProjectPreviewList = {
       href: "https://magnus-character-sheet.vercel.app/", // Update if internal
       type: "web",
     },
+    {
+      index: 4,
+      title: "Monsterdle",
+      description: "A daily monster guessing game inspired by Wordle.",
+      longDescription:
+        "Monsterdle is a Wordle-like web game where players guess a different monster every day. It focuses on quick, satisfying daily play sessions with fair hinting, shareable results, and streak tracking.",
+      image: "/LabelUpLogo.png",
+      href: "/WebDevelopment", // Placeholder; replace with project link when live
+      type: "web",
+    },
   ],
 };
 
@@ -62,6 +72,10 @@ export const siteConfig = {
       href: "/Games",
     },
     {
+      label: "Web Development",
+      href: "/WebDevelopment",
+    },
+    {
       label: "Experience",
       href: "/Experience",
     },
@@ -78,6 +92,10 @@ export const siteConfig = {
     {
       label: "Games",
       href: "/Games",
+    },
+    {
+      label: "Web Development",
+      href: "/WebDevelopment",
     },
     {
       label: "Experience",
